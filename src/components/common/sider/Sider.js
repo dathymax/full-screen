@@ -12,6 +12,10 @@ const TravelSider = (props) => {
         mode="inline"
         defaultSelectedKeys={["1"]}
         defaultOpenKeys={["sub1"]}
+        theme="dark"
+        theme={props.theme}
+        onClick={props.handleClick}
+        selectedKeys={[props.current]}
       >
         <SubMenu key="sub1" title="Sub Menu">
           <Menu.Item key="1">
