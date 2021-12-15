@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Layout } from "antd";
-import TravelHeader from "./components/Header";
-import TravelContent from "./components/Content";
-import TravelSider from "./components/Sider";
-import { BrowserRouter as Router } from "react-router-dom";
+import TravelHeader from "./components/common/header/Header";
+import TravelContent from "./components/common/content/Content";
+import TravelSider from "./components/common/sider/Sider";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import './App.css';
 
-function App() {
+function App(props) {
   const [fullScreen, setFullScreen] = useState(true);
 
   const handleFullScreen = (e) => {
