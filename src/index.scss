@@ -5,6 +5,13 @@
 	--border-bottom-color: #e5e5e5;
 }
 
+html {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
 body {
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
@@ -12,19 +19,22 @@ body {
 		"Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
 }
 
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 		monospace;
 }
-// ----------------- Lib -----------------------//
+// ----------------- Lib, Common -----------------------//
 @import "./scss/lib/lib";
+@import "./scss/common/common";
 // ----------------- Header ---------------------//
 @import "./scss/header/header";
 @import "./scss/header/breadcrumb";
 // ------------------ Sider ------------------//
 @import "./scss/sider/sider";
+@import "./scss/sider/tour";
 // ------------------- Content -----------------//
 @import "./scss/content/content";
 @import "./scss/content/fullscreen";

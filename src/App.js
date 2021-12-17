@@ -19,24 +19,11 @@ function App(props) {
         setFullScreen(!fullScreen);
     };
 
-    const [theme, setTheme] = useState("dark")
-    const [current, setCurrent] = useState()
-
-    const changeTheme = value => {
-        setTheme(value ? 'dark' : 'light')
-    };
-
-    const handleClick = e => {
-        console.log('click ', e);
-        setCurrent(e.key)
-    };
-
     return (
         <div>
             <Router>
                 <Layout>
-                    <TravelHeader id="header" theme={theme}
-                        changeTheme={changeTheme} />
+                    <TravelHeader id="header" />
                     <Layout>
                         <TravelSider id="sider" />
                         <TravelContent id="content" onClick={handleFullScreen} />
