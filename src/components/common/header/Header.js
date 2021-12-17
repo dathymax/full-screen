@@ -1,27 +1,24 @@
 import React from "react";
-import { Breadcrumb, Layout } from "antd";
+import { Layout } from "antd";
 import HeaderBreadCrumb from "./BreadCrumb";
-import ChangeTheme from "./ChangeTheme";
 
 const { Header } = Layout;
 
 const TravelHeader = (props) => {
-  return (
-    <div className="header">
-      <Header id={props.id}>
-        <div className="header__logo">
-          <span style={{ color: "#fff", fontSize: "20px" }}>This is Header</span>
+    return (
+        <div className="header border__bottom">
+            <Header id={props.id} style={{ backgroundColor: "var(--primary-color)" }}>
+                <div className="header__logo">
+                    <a href="/">
+                        <img src="/logo/logo-travel.png" alt="Logo" className="header__logo--img" />
+                    </a>
+                </div>
+                <div className="breadcrumbs">
+                    <HeaderBreadCrumb />
+                </div>
+            </Header>
         </div>
-        <div className="breadcrumbs">
-          <HeaderBreadCrumb />
-        </div>
-        {/* <div className="change-theme">
-          <ChangeTheme theme={props.theme}
-                changeTheme={props.changeTheme}/>
-        </div> */}
-      </Header>
-    </div>
-  );
+    );
 };
 
 export default TravelHeader;

@@ -1,0 +1,26 @@
+.border {
+	&__bottom {
+		border-bottom: 1px solid var(--border-bottom-color);
+	}
+	&__rds {
+	}
+}
+
+.df {
+	display: flex;
+	&__center-all {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__center-a {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.w {
+	&-50 {
+		width: 50px;
+	}
+}

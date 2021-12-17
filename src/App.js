@@ -3,49 +3,48 @@ import { Layout } from "antd";
 import TravelHeader from "./components/common/header/Header";
 import TravelContent from "./components/common/content/Content";
 import TravelSider from "./components/common/sider/Sider";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import './App.css';
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App(props) {
-  const [fullScreen, setFullScreen] = useState(true);
+    const [fullScreen, setFullScreen] = useState(true);
 
-  const handleFullScreen = (e) => {
-    const header = document.getElementById("header");
-    const sider = document.getElementById("sider");
-    header.style.display = fullScreen === true ? "none" : "block";
-    sider.style.display = fullScreen === true ? "none" : "block";
-    const content = document.getElementById("content");
-    content.style.width = fullScreen === true ? "100vw" : "unset";
-    content.style.height = fullScreen === true ? "100vh" : "unset";
-    setFullScreen(!fullScreen);
-  };
+    const handleFullScreen = (e) => {
+        const header = document.getElementById("header");
+        const sider = document.getElementById("sider");
+        header.style.display = fullScreen === true ? "none" : "block";
+        sider.style.display = fullScreen === true ? "none" : "block";
+        const content = document.getElementById("content");
+        content.style.width = fullScreen === true ? "100vw" : "unset";
+        content.style.height = fullScreen === true ? "100vh" : "unset";
+        setFullScreen(!fullScreen);
+    };
 
-  const [theme, setTheme] = useState("dark")
-  const [current, setCurrent] = useState()
-    
-  const changeTheme = value => {
-    setTheme(value ? 'dark' : 'light')
-  };
+    const [theme, setTheme] = useState("dark")
+    const [current, setCurrent] = useState()
 
-  const handleClick = e => {
-    console.log('click ', e);
-    setCurrent(e.key)
-  };
+    const changeTheme = value => {
+        setTheme(value ? 'dark' : 'light')
+    };
 
-  return (
-    <div>
-      <Router>
-        <Layout>
-          <TravelHeader id="header" theme={theme}
-                changeTheme={changeTheme}/>
-          <Layout>
-            <TravelSider id="sider" />
-            <TravelContent id="content" onClick={handleFullScreen} />
-          </Layout>
-        </Layout>
-      </Router>
-    </div>
-  );
+    const handleClick = e => {
+        console.log('click ', e);
+        setCurrent(e.key)
+    };
+
+    return (
+        <div>
+            <Router>
+                <Layout>
+                    <TravelHeader id="header" theme={theme}
+                        changeTheme={changeTheme} />
+                    <Layout>
+                        <TravelSider id="sider" />
+                        <TravelContent id="content" onClick={handleFullScreen} />
+                    </Layout>
+                </Layout>
+            </Router>
+        </div>
+    );
 }
 
 export default App;
